@@ -7,7 +7,7 @@ replicaCount: 1
 namespace: apps
 
 image:
-  repository: moov/ach
+  repository: quay.io/moov/ach
   pullPolicy: Always
 
 imagePullSecrets: []
@@ -19,7 +19,7 @@ files:
 
 serviceAccount:
   # Specifies whether a service account should be created
-  create: true
+  create: false
   # Annotations to add to the service account
   annotations: {}
   # The name of the service account to use.
@@ -32,7 +32,6 @@ securityContext:
   allowPrivilegeEscalation: false
   readOnlyRootFilesystem: true
   runAsNonRoot: true
-  runAsUser: 1000
 
 service:
   type: ClusterIP
